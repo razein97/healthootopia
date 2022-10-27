@@ -63,35 +63,34 @@ export default function PostPage({
                 {frontmatter.date} | {readingTime} min read
               </div>
               <div className="flex flex-row  justify-center gap-4 ">
-                <Link
-                  href={`https://twitter.com/intent/tweet?url=https://healthootopia.com/blog/${slug}`}
+                <button
+                  onClick={() => {
+                    window.location.href = `https://twitter.com/intent/tweet?url=https://healthootopia.com/blog/${slug}`;
+                  }}
                 >
                   <Tooltip
                     tooltip={'Share on twitter'}
                     icon={<BsTwitter className=" h-6 w-6 " />}
                   />
-                </Link>
-                <Link
-                  href={`https://www.facebook.com/sharer/sharer.php?u=https://healthootopia.com/blog/${slug}&t=${frontmatter.title}`}
+                </button>
+
+                <button
+                  onClick={() => {
+                    window.location.href = `https://www.facebook.com/sharer/sharer.php?u=https://healthootopia.com/blog/${slug}&t=${frontmatter.title}`;
+                  }}
                 >
                   <Tooltip
                     tooltip={'Share on facebook'}
                     icon={<BsFacebook className=" h-6 w-6 " />}
                   />
-                </Link>
+                </button>
 
                 <button
-                  onClick={async () => {
-                    try {
-                      await navigator.clipboard.writeText(
-                        `https://healthootopia.com/blog/${slug}`
-                      );
-                      setCopied('Link Copied');
-                    } catch (err) {
-                      setCopied('Failed to copy link');
-                    } finally {
-                      setCopied('Copy link to clipboard ');
-                    }
+                  onClick={() => {
+                    navigator.clipboard.writeText(
+                      `https://healthootopia.com/blog/${slug}`
+                    );
+                    setCopied('Link Copied');
                   }}
                 >
                   <Tooltip
