@@ -27,7 +27,7 @@ export default function Home({ posts }) {
           <SlideScreen posts={posts} />
         </div>
 
-        <div className="h-2/5 w-full self-center  bg-white   pb-14 md:py-6 lg:h-[540px] lg:w-full xl:h-[540px] xl:w-[1080px] 2xl:h-[540px] 2xl:w-[1080px] ">
+        <div className="h-2/5 w-full flex-1 self-center  bg-white   pb-14 md:py-6 lg:h-[540px] lg:w-full xl:h-[540px] xl:w-[1080px] 2xl:h-[540px] 2xl:w-[1080px] ">
           {posts.map((post, index) => (
             <Post key={index} post={post} />
           ))}
