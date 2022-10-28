@@ -15,7 +15,7 @@ const components = {
         src={`https://www.youtube.com/embed/${props.uid}`}
         width="100%"
         title={props.title}
-        frameborder="0"
+        frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen
       />

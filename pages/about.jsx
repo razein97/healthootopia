@@ -9,6 +9,7 @@ import Footer from '../components/footer';
 import Link from 'next/link';
 import {
   AiFillFacebook,
+  AiFillInstagram,
   AiFillMail,
   AiFillTwitterSquare,
 } from 'react-icons/ai';
@@ -52,16 +53,15 @@ export default function AboutMe() {
 
               <div className=" flex w-full flex-row items-center justify-center  space-x-3 ">
                 <Link href="mailto:healthootopia@gmail.com">
-                  <AiFillMail className=" h-8 w-8" />
+                  <AiFillMail className="h-8 w-8 hover:cursor-pointer" />
                 </Link>
 
-                {/* TODO: Add facebook profile link */}
-                <Link href="">
-                  <AiFillFacebook className=" h-8 w-8" />
+                <Link href="https://www.instagram.com/healthootopia/">
+                  <AiFillInstagram className="h-8 w-8 hover:cursor-pointer" />
                 </Link>
 
                 <Link href="https://twitter.com/Singh_Smrita">
-                  <AiFillTwitterSquare className=" h-8 w-8" />
+                  <AiFillTwitterSquare className="h-8 w-8 hover:cursor-pointer" />
                 </Link>
               </div>
             </div>

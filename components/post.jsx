@@ -1,11 +1,12 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import LimitWords from '../utils/limitWords';
 
 export default function Post({ post }) {
   return (
     <div className=" ">
       <div className=" w-full self-center md:bg-[#f7f7f7] ">
-        <div className="grid gap-y-4  p-6 text-center  md:grid-flow-col  ">
+        <div className="grid gap-y-4  p-6  md:grid-flow-col  ">
           <div className="relative h-60 w-60 justify-self-center md:col-span-1 md:h-80 md:w-80">
             <Image
               src={post.frontmatter.cover_image}
@@ -16,26 +17,34 @@ export default function Post({ post }) {
             />
           </div>
 
-          <div className=" grid   gap-y-4  md:col-span-4 md:gap-y-0   md:p-8">
+          <div className=" grid gap-y-4  md:col-span-4 md:gap-y-4   md:p-8">
             <Link
-              href={`categories/${post.frontmatter.category.toLowerCase()}`}
+              href={`/categories/${post.frontmatter.category.toLowerCase()}`}
             >
-              <h3 className="font-xs font-OpenSans text-sm font-semibold uppercase text-[#ca9b52cc]  ">
+              <h3 className="font-xs text-center font-OpenSans text-sm  font-semibold uppercase text-[#ca9b52cc] hover:cursor-pointer  ">
                 {post.frontmatter.category}
               </h3>
             </Link>
-            <h3 className=" font-PlayfairDisplay text-3xl ">
-              {post.frontmatter.title}
-            </h3>
+            <Link href={`/blog/${post.slug}`}>
+              <h3 className=" text-center font-PlayfairDisplay text-3xl  hover:cursor-pointer ">
+                {post.frontmatter.title}
+              </h3>
+            </Link>
 
-            <div className=" font-PlayfairDisplay text-base italic text-gray-400">
+            <div className=" text-center font-PlayfairDisplay  text-base italic text-gray-400">
               {post.frontmatter.date} | {post.readingTime} min read
             </div>
-            <p className="text-justify font-OpenSans text-lg font-light text-[#464646]">
-              {post.frontmatter.excerpt}
+            <p
+              className={`${
+                post.frontmatter.excerpt.length < 30
+                  ? 'text-center'
+                  : 'text-justify'
+              } font-OpenSans text-lg font-light text-[#464646] `}
+            >
+              {LimitWords(post.frontmatter.excerpt, 30)}
             </p>
             <br />
-            <div className="w-full">
+            <div className="w-full text-center">
               <Link href={`/blog/${post.slug}`}>
                 <button
                   type="button"

@@ -10,8 +10,7 @@ export default function LimitWords(textToLimit, wordLimit) {
   var i = 0;
 
   if (numberOfWords > wordLimit) {
-    for (i = 0; i < wordLimit; i++)
-      finalText = finalText + ' ' + text3[i] + ' ';
+    for (i = 0; i < wordLimit; i++) finalText = finalText + ' ' + text3[i] + '';
 
     return finalText + '…';
   } else return textToLimit;

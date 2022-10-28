@@ -30,7 +30,7 @@ export default function PostPage({
   const [copied, setCopied] = useState('Copy link to clipboard');
 
   return (
-    <div className="">
+    <div>
       <Head>
         <title>{frontmatter.title}</title>
       </Head>
@@ -39,79 +39,79 @@ export default function PostPage({
 
       <Sidebar padding="pt-0" menu={menu} setMenu={setMenu} />
 
-      <div className="">
-        <div className="mx-auto  my-0 flex min-h-screen w-full  flex-col bg-white md:py-6  lg:w-full  xl:w-[1080px]  2xl:w-[1080px] ">
-          <div className="grid  flex-1 gap-y-4 p-6  ">
-            <div className="relative h-60 w-60 justify-self-center md:h-80 md:w-80">
-              <Image
-                src={frontmatter.cover_image}
-                alt=""
-                layout="fill"
-                objectFit="cover"
-                className=""
-              />
-            </div>
+      <div className="mx-auto  my-0 flex min-h-screen w-full  flex-col bg-white md:py-6  lg:w-full  xl:w-[1080px]  2xl:w-[1080px] ">
+        <div className="grid  flex-1 gap-y-4 p-6  ">
+          <div className="relative h-60 w-full justify-self-center md:h-[540px] md:w-full">
+            <Image
+              src={frontmatter.cover_image}
+              alt=""
+              layout="fill"
+              objectFit="cover"
+              className=""
+            />
+          </div>
 
-            <div className="grid   gap-y-4">
-              <h3 className="font-xs text-center font-OpenSans text-sm font-semibold uppercase text-[#ca9b52cc]  ">
+          <div className="grid   gap-y-4">
+            <Link href={`/categories/${frontmatter.category.toLowerCase()}`}>
+              <h3 className="font-xs text-center font-OpenSans text-sm font-semibold uppercase text-[#ca9b52cc] hover:cursor-pointer  ">
                 {frontmatter.category}
               </h3>
-              <h3 className=" text-center font-PlayfairDisplay  text-3xl ">
-                {frontmatter.title}
-              </h3>
-              <div className="text-center  font-PlayfairDisplay text-base italic text-gray-400">
-                {frontmatter.date} | {readingTime} min read
-              </div>
-              <div className="flex flex-row  justify-center gap-4 ">
-                <button
-                  onClick={() => {
-                    window.location.href = `https://twitter.com/intent/tweet?text=${frontmatter.title}&url=https://healthootopia.com/blog/${slug}`;
-                  }}
-                >
-                  <Tooltip
-                    tooltip={'Share on twitter'}
-                    icon={<BsTwitter className=" h-6 w-6 " />}
-                  />
-                </button>
+            </Link>
+            <h3 className=" text-center font-PlayfairDisplay  text-3xl ">
+              {frontmatter.title}
+            </h3>
+            <div className="text-center  font-PlayfairDisplay text-base italic text-gray-400">
+              {frontmatter.date} | {readingTime} min read
+            </div>
+            <div className="flex flex-row  justify-center gap-4 ">
+              <button
+                onClick={() => {
+                  window.location.href = `https://twitter.com/intent/tweet?text=${frontmatter.title}&url=https://healthootopia.com/blog/${slug}`;
+                }}
+              >
+                <Tooltip
+                  tooltip={'Share on twitter'}
+                  icon={<BsTwitter className=" h-6 w-6 " />}
+                />
+              </button>
 
-                <button
-                  onClick={() => {
-                    window.location.href = `https://www.facebook.com/sharer/sharer.php?u=https://healthootopia.com/blog/${slug}&t=${frontmatter.title}`;
-                  }}
-                >
-                  <Tooltip
-                    tooltip={'Share on facebook'}
-                    icon={<BsFacebook className=" h-6 w-6 " />}
-                  />
-                </button>
+              <button
+                onClick={() => {
+                  window.location.href = `https://www.facebook.com/sharer/sharer.php?u=https://healthootopia.com/blog/${slug}&t=${frontmatter.title}`;
+                }}
+              >
+                <Tooltip
+                  tooltip={'Share on facebook'}
+                  icon={<BsFacebook className=" h-6 w-6 " />}
+                />
+              </button>
 
-                <button
-                  onClick={() => {
-                    navigator.clipboard.writeText(
-                      `https://healthootopia.com/blog/${slug}`
-                    );
-                    setCopied('Link Copied');
-                  }}
-                >
-                  <Tooltip
-                    tooltip={copied}
-                    icon={
-                      <BiLink
-                        onMouseEnter={() => {
-                          setCopied('Copy link to clipboard');
-                        }}
-                        onMouseLeave={() => {
-                          setCopied('Copy link to clipboard');
-                        }}
-                        className="h-6 w-6"
-                      />
-                    }
-                  />
-                </button>
-              </div>
-              <div className="prose justify-self-center text-justify font-OpenSans prose-headings:font-PlayfairDisplay  md:prose-lg">
-                <BlogContent MdxSource={mdxSource} />
-              </div>
+              <button
+                onClick={() => {
+                  navigator.clipboard.writeText(
+                    `https://healthootopia.com/blog/${slug}`
+                  );
+                  setCopied('Link Copied');
+                }}
+              >
+                <Tooltip
+                  tooltip={copied}
+                  icon={
+                    <BiLink
+                      onMouseEnter={() => {
+                        setCopied('Copy link to clipboard');
+                      }}
+                      onMouseLeave={() => {
+                        setCopied('Copy link to clipboard');
+                      }}
+                      className="h-6 w-6"
+                    />
+                  }
+                />
+              </button>
+            </div>
+            <div className="prose justify-self-center text-justify font-OpenSans prose-headings:font-PlayfairDisplay  md:prose-lg">
+              <BlogContent MdxSource={mdxSource} />
             </div>
           </div>
         </div>

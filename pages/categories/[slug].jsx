@@ -14,7 +14,7 @@ import Footer from '../../components/footer.jsx';
 export default function Categories({ posts }) {
   const [menu, setMenu] = useState(false);
   return (
-    <div className=" flex min-h-screen w-full  flex-col ">
+    <div className=" flex min-h-screen w-full flex-col ">
       <Head>
         <title>Category</title>
       </Head>
@@ -22,7 +22,7 @@ export default function Categories({ posts }) {
       <Header setMenu={setMenu} menu={menu} />
       <Sidebar padding="pt-14" menu={menu} setMenu={setMenu} />
 
-      <div className="h-2/5 w-full self-center bg-white md:py-6 lg:h-[540px] lg:w-full xl:h-[540px] xl:w-[1080px] 2xl:h-[540px] 2xl:w-[1080px] ">
+      <div className="h-2/5 w-full flex-1 self-center bg-white md:py-6 lg:h-[540px] lg:w-full xl:h-[540px] xl:w-[1080px] 2xl:h-[540px] 2xl:w-[1080px] ">
         {posts.map((post, index) => (
           <Post key={index} post={post} />
         ))}
