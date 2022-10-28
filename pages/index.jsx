@@ -23,7 +23,7 @@ export default function Home({ posts }) {
         <Header setMenu={setMenu} menu={menu} />
         <Sidebar padding="pt-14" menu={menu} setMenu={setMenu} />
 
-        <div className="h-2/5 w-full  self-center lg:h-[540px] lg:w-full xl:h-[540px] xl:w-[1080px] 2xl:h-[540px] 2xl:w-[1080px]">
+        <div className="flex h-2/5  w-full self-center lg:h-[540px] lg:w-full xl:h-[540px] xl:w-[1080px] 2xl:h-[540px] 2xl:w-[1080px]">
           <SlideScreen posts={posts} />
         </div>
 

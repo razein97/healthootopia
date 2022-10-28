@@ -16,7 +16,7 @@ export default function Post({ post }) {
             />
           </div>
 
-          <div className=" grid   gap-y-4  md:col-span-4 md:gap-y-0   md:p-4">
+          <div className=" grid   gap-y-4  md:col-span-4 md:gap-y-0   md:p-8">
             <Link
               href={`categories/${post.frontmatter.category.toLowerCase()}`}
             >

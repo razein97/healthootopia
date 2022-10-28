@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/effect-fade';
-// import 'swiper/css/navigation';
+import 'swiper/css/navigation';
 
 import { Autoplay, EffectFade, Pagination, Navigation } from 'swiper';
 
@@ -19,7 +19,7 @@ export default function SlideScreen({ posts }) {
       effect={'fade'}
       // centeredSlides={true}
       autoplay={{
-        delay: 2500,
+        delay: 3000,
         disableOnInteraction: false,
       }}
       pagination={{
@@ -27,21 +27,21 @@ export default function SlideScreen({ posts }) {
       }}
       navigation={true}
       modules={[EffectFade, Autoplay, Pagination, Navigation]}
-      className="mySwiper h-full"
+      className="mySwiper"
     >
       {posts.slice(0, 5).map((post, index) => (
         // <Post key={index} post={post} />
         <SwiperSlide key={index}>
           <Image
-            className="w-full brightness-75 filter"
-            //TODO: Replace with banner image
+            className="brightness-75 filter"
             src={post.frontmatter.banner_image}
             alt=""
             objectFit="cover"
             layout="fill"
           />
-          <div className=" grid h-full grid-flow-col gap-y-4 bg-white p-7">
-            <div className=" relative text-center ">
+
+          <div className=" grid h-full w-full grid-flow-col gap-y-4 bg-white p-7">
+            <div className=" relative  self-center text-center ">
               <Link
                 href={`/categories/${post.frontmatter.category.toLowerCase()}`}
               >

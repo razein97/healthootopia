@@ -52,11 +52,10 @@
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
 }
+
+.swiper-button-prev,
 .swiper-button-next {
-  color: #ffffff !important;
-}
-.swiper-button-prev {
-  color: #ffffff !important;
+  display: none !important;
 }
 
 @layer components {

@@ -40,8 +40,8 @@ export default function PostPage({
       <Sidebar padding="pt-0" menu={menu} setMenu={setMenu} />
 
       <div className="">
-        <div className="mx-auto  my-0 w-full bg-white md:py-6  lg:w-full  xl:w-[1080px]  2xl:w-[1080px] ">
-          <div className=" grid gap-y-4 p-6  ">
+        <div className="mx-auto  my-0 flex min-h-screen w-full  flex-col bg-white md:py-6  lg:w-full  xl:w-[1080px]  2xl:w-[1080px] ">
+          <div className="grid  flex-1 gap-y-4 p-6  ">
             <div className="relative h-60 w-60 justify-self-center md:h-80 md:w-80">
               <Image
                 src={frontmatter.cover_image}
@@ -52,7 +52,7 @@ export default function PostPage({
               />
             </div>
 
-            <div className="grid  gap-y-4 ">
+            <div className="grid   gap-y-4">
               <h3 className="font-xs text-center font-OpenSans text-sm font-semibold uppercase text-[#ca9b52cc]  ">
                 {frontmatter.category}
               </h3>
@@ -65,7 +65,7 @@ export default function PostPage({
               <div className="flex flex-row  justify-center gap-4 ">
                 <button
                   onClick={() => {
-                    window.location.href = `https://twitter.com/intent/tweet?url=https://healthootopia.com/blog/${slug}`;
+                    window.location.href = `https://twitter.com/intent/tweet?text=${frontmatter.title}&url=https://healthootopia.com/blog/${slug}`;
                   }}
                 >
                   <Tooltip
@@ -109,7 +109,7 @@ export default function PostPage({
                   />
                 </button>
               </div>
-              <div className="prose justify-self-center text-justify font-OpenSans">
+              <div className="prose justify-self-center text-justify font-OpenSans prose-headings:font-PlayfairDisplay  md:prose-lg">
                 <BlogContent MdxSource={mdxSource} />
               </div>
             </div>
