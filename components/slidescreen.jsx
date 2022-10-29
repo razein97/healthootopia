@@ -1,22 +1,22 @@
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperSlide } from "swiper/react";
 
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/effect-fade';
-import 'swiper/css/navigation';
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/effect-fade";
+import "swiper/css/navigation";
 
-import { Autoplay, EffectFade, Pagination, Navigation } from 'swiper';
+import { Autoplay, EffectFade, Pagination, Navigation } from "swiper";
 
-import React from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
-import LimitWords from '../utils/limitWords';
+import React from "react";
+import Image from "next/image";
+import Link from "next/link";
+import LimitWords from "../utils/limitWords";
 
 export default function SlideScreen({ posts }) {
   return (
     <Swiper
       spaceBetween={30}
-      effect={'fade'}
+      effect={"fade"}
       // centeredSlides={true}
       autoplay={{
         delay: 3000,
@@ -51,10 +51,10 @@ export default function SlideScreen({ posts }) {
               </Link>
               <br />
               <br />
-              <Link href="">
-                <a className="py-6 font-PlayfairDisplay text-4xl text-white md:text-5xl">
+              <Link href={`/blog/${post.slug}`}>
+                <p className="py-6 font-PlayfairDisplay text-4xl text-white hover:cursor-pointer md:text-5xl">
                   {post.frontmatter.title}
-                </a>
+                </p>
               </Link>
               <br />
               <p className=" hidden py-6 font-OpenSans text-lg font-light text-white md:block">

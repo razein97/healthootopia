@@ -1,15 +1,15 @@
-import fs from 'fs';
-import path from 'path';
-import matter from 'gray-matter';
-import Head from 'next/head';
-import Post from '../components/post.jsx';
-import { sortByDate } from '../utils';
-import Header from '../components/header.jsx';
-import SlideScreen from '../components/slidescreen.jsx';
-import readTime from '../utils/readTime.js';
-import React, { useState } from 'react';
-import Sidebar from '../components/sidebar.jsx';
-import Footer from '../components/footer.jsx';
+import fs from "fs";
+import path from "path";
+import matter from "gray-matter";
+import Head from "next/head";
+import Post from "../components/post.jsx";
+import { sortByDate } from "../utils";
+import Header from "../components/header.jsx";
+import SlideScreen from "../components/slidescreen.jsx";
+import readTime from "../utils/readTime.js";
+import React, { useState } from "react";
+import Sidebar from "../components/sidebar.jsx";
+import Footer from "../components/footer.jsx";
 
 export default function Home({ posts }) {
   const [menu, setMenu] = useState(false);
@@ -17,7 +17,7 @@ export default function Home({ posts }) {
     <div className="">
       <div className="flex min-h-screen w-full flex-col   ">
         <Head>
-          <title>Healthootopia</title>
+          <title>Healthootopia-Learn.Nurture.Love</title>
         </Head>
 
         <Header setMenu={setMenu} menu={menu} />
@@ -41,17 +41,17 @@ export default function Home({ posts }) {
 
 export async function getStaticProps() {
   // Get files from the posts dir
-  const files = fs.readdirSync(path.join('posts'));
+  const files = fs.readdirSync(path.join("posts"));
 
   // Get slug and frontmatter from posts
   const posts = files.map((filename) => {
     // Create slug
-    const slug = filename.replace('.mdx', '');
+    const slug = filename.replace(".mdx", "");
 
     // Get frontmatter
     const markdownWithMeta = fs.readFileSync(
-      path.join('posts', filename),
-      'utf-8'
+      path.join("posts", filename),
+      "utf-8"
     );
 
     const { data: frontmatter, content } = matter(markdownWithMeta);

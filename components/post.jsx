@@ -1,20 +1,22 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import LimitWords from '../utils/limitWords';
+import Image from "next/image";
+import Link from "next/link";
+import LimitWords from "../utils/limitWords";
 
 export default function Post({ post }) {
   return (
     <div className=" ">
       <div className=" w-full self-center md:bg-[#f7f7f7] ">
         <div className="grid gap-y-4  p-6  md:grid-flow-col  ">
-          <div className="relative h-60 w-60 justify-self-center md:col-span-1 md:h-80 md:w-80">
-            <Image
-              src={post.frontmatter.cover_image}
-              alt=""
-              layout="fill"
-              objectFit="cover"
-              className=""
-            />
+          <div className="relative  h-60 w-60 self-center md:col-span-1 md:h-80 md:w-80">
+            <Link href={`/blog/${post.slug}`}>
+              <Image
+                src={post.frontmatter.cover_image}
+                alt=""
+                layout="fill"
+                objectFit="cover"
+                className=""
+              />
+            </Link>
           </div>
 
           <div className=" grid gap-y-4  md:col-span-4 md:gap-y-4   md:p-8">
@@ -37,8 +39,8 @@ export default function Post({ post }) {
             <p
               className={`${
                 post.frontmatter.excerpt.length < 30
-                  ? 'text-center'
-                  : 'text-justify'
+                  ? "text-center"
+                  : "text-justify"
               } font-OpenSans text-lg font-light text-[#464646] `}
             >
               {LimitWords(post.frontmatter.excerpt, 30)}

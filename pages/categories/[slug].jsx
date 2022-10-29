@@ -1,15 +1,14 @@
-import fs from 'fs';
-import path from 'path';
-import matter from 'gray-matter';
-import Head from 'next/head';
-import Post from '../../components/post.jsx';
-import { sortByDate } from '../../utils';
-import Header from '../../components/header.jsx';
-import readTime from '../../utils/readTime.js';
-import React, { useState, useEffect } from 'react';
-import Sidebar from '../../components/sidebar.jsx';
-import { useRouter } from 'next/router';
-import Footer from '../../components/footer.jsx';
+import fs from "fs";
+import path from "path";
+import matter from "gray-matter";
+import Head from "next/head";
+import Post from "../../components/post.jsx";
+import { sortByDate } from "../../utils";
+import Header from "../../components/header.jsx";
+import readTime from "../../utils/readTime.js";
+import React, { useState } from "react";
+import Sidebar from "../../components/sidebar.jsx";
+import Footer from "../../components/footer.jsx";
 
 export default function Categories({ posts }) {
   const [menu, setMenu] = useState(false);
@@ -36,9 +35,9 @@ export async function getStaticPaths() {
   // ADD more categories by duplicating params
   return {
     paths: [
-      { params: { slug: 'health' } },
-      { params: { slug: 'fitness' } },
-      { params: { slug: 'potpourri' } },
+      { params: { slug: "health" } },
+      { params: { slug: "fitness" } },
+      { params: { slug: "potpourri" } },
     ],
 
     fallback: false,
@@ -47,17 +46,17 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   // Get files from the posts dir
-  const files = fs.readdirSync(path.join('posts'));
+  const files = fs.readdirSync(path.join("posts"));
 
   // Get slug and frontmatter from posts
   const tempPosts = files.map((filename) => {
     // Create slug
-    const slug = filename.replace('.mdx', '');
+    const slug = filename.replace(".mdx", "");
 
     // Get frontmatter
     const markdownWithMeta = fs.readFileSync(
-      path.join('posts', filename),
-      'utf-8'
+      path.join("posts", filename),
+      "utf-8"
     );
 
     const { data: frontmatter, content } = matter(markdownWithMeta);
@@ -92,3 +91,97 @@ export async function getStaticProps({ params }) {
     },
   };
 }
+
+//dynamically add categories
+
+// export async function getStaticPaths() {
+//   const files = fs.readdirSync(path.join('posts'))
+
+//   let tempStorage = []
+
+//   const temppaths = files.map((filename) => {
+
+//     const markdownWithMeta = fs.readFileSync(
+//       path.join('posts', filename),
+//       'utf-8'
+//     )
+
+//     const { data: frontmatter } = matter(markdownWithMeta)
+
+//     if (frontmatter.draft === false) {
+//       frontmatter.categories.map(
+//         category => {
+//           let slug = slugify(category)
+//           tempStorage.push({ params: { slug } });
+
+//         }
+//       )
+//     } else {
+//       return null
+//     }
+
+//   })
+
+//   const paths = tempStorage.filter((item,
+//     index) => {
+//     return tempStorage.indexOf(item) === index
+//   })
+
+//   return {
+//     paths,
+//     fallback: false,
+//   }
+
+// }
+
+// export async function getStaticProps({ params: { slug } }) {
+
+//   // Get files from the posts dir
+//   const files = fs.readdirSync(path.join('posts'))
+
+//   let tempStorage = []
+
+//   // Get slug and frontmatter from posts
+
+//   const tempPosts = files.map((filename) => {
+
+//     // Get frontmatter
+//     const markdownWithMeta = fs.readFileSync(
+//       path.join('posts', filename),
+//       'utf-8'
+//     )
+
+//     const { data: frontmatter } = matter(markdownWithMeta)
+
+//     if (frontmatter.draft === false) {
+//       frontmatter.categories.map(
+//         category => {
+//           let categroySlug = slugify(category)
+//           if (slug === categroySlug) {
+
+//             tempStorage.push({ post: frontmatter })
+
+//           }
+//         }
+//       )
+//     } else {
+//       return null
+//     }
+//   })
+
+//   //  remove null in tempPosts
+
+//   const posts = tempStorage.filter(
+//     post => {
+
+//       return post && post
+//     }
+//   )
+
+//   return {
+//     props: {
+//       posts
+//     },
+//   }
+
+// }
