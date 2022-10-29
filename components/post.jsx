@@ -7,7 +7,7 @@ export default function Post({ post }) {
     <div className=" ">
       <div className=" w-full self-center md:bg-[#f7f7f7] ">
         <div className="grid gap-y-4  p-6  md:grid-flow-col  ">
-          <div className="relative  h-60 w-60 self-center md:col-span-1 md:h-80 md:w-80">
+          <div className="relative  h-60 w-60 self-center  justify-self-center md:col-span-1 md:h-80 md:w-80">
             <Link href={`/blog/${post.slug}`}>
               <Image
                 src={post.frontmatter.cover_image}

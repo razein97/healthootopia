@@ -28,8 +28,8 @@ export default function RecommendedPost({ post }) {
             </button>
           </Link>
 
-          <div className=" text-center font-PlayfairDisplay text-sm italic text-gray-400 md:text-base">
-            {post.frontmatter.date} | {post.readingTime} min read
+          <div className=" text-center font-PlayfairDisplay text-sm italic text-gray-400 md:text-sm">
+            {post.frontmatter.date} <br /> {post.readingTime} min read
           </div>
         </div>
       </div>

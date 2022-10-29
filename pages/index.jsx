@@ -15,9 +15,9 @@ export default function Home({ posts }) {
   const [menu, setMenu] = useState(false);
   return (
     <div className="">
-      <div className="flex min-h-screen w-full flex-col   ">
+      <div className="flex min-h-screen w-full flex-col">
         <Head>
-          <title>Healthootopia-Learn.Nurture.Love</title>
+          <title>Healthootopia - Learn . Nurture . Love</title>
         </Head>
 
         <Header setMenu={setMenu} menu={menu} />
