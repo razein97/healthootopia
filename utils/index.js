@@ -9,3 +9,8 @@ export function slugify(title) {
     .replace(/[^\w ]+/g, "")
     .replace(/ +/g, "-");
 }
+
+export const preventDefault = (f) => (e) => {
+  e.preventDefault();
+  f(e);
+};

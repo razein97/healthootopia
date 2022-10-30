@@ -9,6 +9,7 @@ import readTime from "../../utils/readTime.js";
 import React, { useState } from "react";
 import Sidebar from "../../components/sidebar.jsx";
 import Footer from "../../components/footer.jsx";
+import NoPost from "../../components/nopost.jsx";
 
 export default function Categories({ posts }) {
   const [menu, setMenu] = useState(false);
@@ -21,11 +22,16 @@ export default function Categories({ posts }) {
       <Header setMenu={setMenu} menu={menu} />
       <Sidebar padding="pt-14" menu={menu} setMenu={setMenu} />
 
-      <div className="h-2/5 w-full flex-1 self-center bg-white md:py-6 lg:h-[540px] lg:w-full xl:h-[540px] xl:w-[1080px] 2xl:h-[540px] 2xl:w-[1080px] ">
-        {posts.map((post, index) => (
-          <Post key={index} post={post} />
-        ))}
-      </div>
+      {posts.length > 0 ? (
+        <div className="h-2/5 w-full flex-1 self-center bg-white md:py-6 lg:h-[540px] lg:w-full xl:h-[540px] xl:w-[1080px] 2xl:h-[540px] 2xl:w-[1080px] ">
+          {posts.map((post, index) => (
+            <Post key={index} post={post} />
+          ))}
+        </div>
+      ) : (
+        <NoPost />
+      )}
+
       <Footer />
     </div>
   );

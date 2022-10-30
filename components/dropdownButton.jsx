@@ -1,6 +1,7 @@
-import React from 'react';
-import Link from 'next/link';
+import React from "react";
+import Link from "next/link";
 
+// TODO: Close Dropdown after it is clicked
 export default function DropdownButton() {
   return (
     <div className="">
