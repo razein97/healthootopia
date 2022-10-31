@@ -15,7 +15,7 @@ export default function SearchPage() {
 
   const [menu, setMenu] = useState(false);
 
-  const posts = searchPosts(query.q);
+  const posts = searchPosts(query.q?.toLowerCase());
 
   return (
     <div className=" flex min-h-screen w-full flex-col ">
@@ -48,7 +48,7 @@ function searchPosts(searchString) {
     if (
       post.frontmatter.title.toLowerCase().includes(searchString) ||
       post.frontmatter.excerpt.toLowerCase().includes(searchString) ||
-      post.frontmatter.tags.includes(searchString)
+      post.frontmatter.tags.toString().toLowerCase().includes(searchString)
     ) {
       TempPosts.push(post);
     } else {
