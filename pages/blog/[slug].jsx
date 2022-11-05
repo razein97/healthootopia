@@ -22,6 +22,7 @@ import Footer from "../../components/footer";
 import getRandomPost from "../../utils/getRandomPosts";
 import RecommendedPost from "../../components/recommendedPost";
 import Tags from "../../components/tags";
+import Meta from "../../components/meta";
 
 export default function PostPage({
   frontmatter,
@@ -35,9 +36,13 @@ export default function PostPage({
 
   return (
     <div className="flex min-h-screen w-full flex-col">
-      <Head>
-        <title>{frontmatter.title}</title>
-      </Head>
+      <Meta
+        title={frontmatter.title}
+        keywords={frontmatter.tags}
+        description={frontmatter.excerpt}
+        ogTitle={frontmatter.title}
+        ogUrl={`https://healthootopia.com/blog/${slug}`}
+      />
 
       <Header setMenu={setMenu} menu={menu} />
 

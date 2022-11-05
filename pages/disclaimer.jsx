@@ -1,12 +1,20 @@
-import React, { useState } from 'react';
-import Sidebar from '../components/sidebar.jsx';
-import Footer from '../components/footer.jsx';
-import Header from '../components/header.jsx';
+import React, { useState } from "react";
+import Sidebar from "../components/sidebar.jsx";
+import Footer from "../components/footer.jsx";
+import Header from "../components/header.jsx";
+import Meta from "../components/meta.jsx";
 
 export default function Disclaimer() {
   const [menu, setMenu] = useState(false);
   return (
     <div className="flex  min-h-screen w-full flex-col">
+      <Meta
+        title={"Disclaimer"}
+        keywords={"diclaimer, notice"}
+        description="Disclaimer of the website"
+        ogTitle="Disclaimer"
+      />
+
       <Header setMenu={setMenu} menu={menu} />
       <Sidebar padding="pt-14" menu={menu} setMenu={setMenu} />
 

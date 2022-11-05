@@ -1,26 +1,30 @@
-import React from 'react';
-import Header from '../components/header';
-import Sidebar from '../components/sidebar';
-import Head from 'next/head';
-import { useState } from 'react';
-import Image from 'next/image';
-import myImg from '../public/images/smrita-singh.png';
-import Footer from '../components/footer';
-import Link from 'next/link';
+import React from "react";
+import Header from "../components/header";
+import Sidebar from "../components/sidebar";
+import Head from "next/head";
+import { useState } from "react";
+import Image from "next/image";
+import myImg from "../public/images/smrita-singh.png";
+import Footer from "../components/footer";
+import Link from "next/link";
 import {
   AiFillFacebook,
   AiFillInstagram,
   AiFillMail,
   AiFillTwitterSquare,
-} from 'react-icons/ai';
+} from "react-icons/ai";
+import Meta from "../components/meta";
 
 export default function AboutMe() {
   const [menu, setMenu] = useState(false);
   return (
     <div className="flex h-screen flex-col justify-between">
-      <Head>
-        <title>About Me</title>
-      </Head>
+      <Meta
+        title={"About me"}
+        keywords={"about, author, doctor, practitioner, health"}
+        description="About the author"
+        ogTitle="About the author"
+      />
       <Header setMenu={setMenu} menu={menu} />
       <Sidebar padding="pt-14" menu={menu} setMenu={setMenu} />
 

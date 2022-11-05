@@ -118,6 +118,7 @@ function Header(props) {
               <BiSearchAlt2 className=" h-6 w-6" />
             </button>
             <input
+              autoFocus="true"
               value={query}
               onChange={handleParam(setQuery)}
               placeholder="Search"
@@ -128,6 +129,7 @@ function Header(props) {
             />
             <button
               onClick={() => {
+                setQuery("");
                 setViewSearchBar(!viewSearchBar);
               }}
             >

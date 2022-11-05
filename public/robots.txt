@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://healthootopia.com
+
+# Sitemaps
+Sitemap: https://healthootopia.com/sitemap.xml

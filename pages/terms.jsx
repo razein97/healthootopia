@@ -1,12 +1,19 @@
-import React, { useState } from 'react';
-import Sidebar from '../components/sidebar.jsx';
-import Footer from '../components/footer.jsx';
-import Header from '../components/header.jsx';
+import React, { useState } from "react";
+import Sidebar from "../components/sidebar.jsx";
+import Footer from "../components/footer.jsx";
+import Header from "../components/header.jsx";
+import Meta from "../components/meta.jsx";
 
 export default function Terms() {
   const [menu, setMenu] = useState(false);
   return (
     <div>
+      <Meta
+        title={"Terms and Conditions"}
+        keywords={"terms, conditions"}
+        description="Healthootpia terms and conditions"
+        ogTitle="Healthootopia Terms and Conditions"
+      />
       <Header setMenu={setMenu} menu={menu} />
       <Sidebar padding="pt-14" menu={menu} setMenu={setMenu} />
 
@@ -113,7 +120,7 @@ export default function Terms() {
           </p>
           <h2 className=" font-PlayfairDisplay text-2xl md:text-4xl ">
             6. Links
-          </h2>{' '}
+          </h2>{" "}
           <p className="text-justify font-OpenSans text-base font-light md:text-lg">
             Healthootopia has not reviewed all of the sites linked to its
             website and is not responsible for the contents of any such linked

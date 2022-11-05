@@ -9,14 +9,18 @@ import Header from "../../components/header.jsx";
 import Sidebar from "../../components/sidebar.jsx";
 import Footer from "../../components/footer.jsx";
 import readTime from "../../utils/readTime.js";
+import Meta from "../../components/meta";
 
 export default function TagsPage({ posts }) {
   const [menu, setMenu] = useState(false);
   return (
     <div className=" flex min-h-screen w-full flex-col ">
-      <Head>
-        <title>Category</title>
-      </Head>
+      <Meta
+        title={"Tags"}
+        keywords={"health, fitness, potpourri"}
+        description={"Posts by tags"}
+        ogTitle={"Healthootopia posts by tags"}
+      />
 
       <Header setMenu={setMenu} menu={menu} />
       <Sidebar padding="pt-14" menu={menu} setMenu={setMenu} />

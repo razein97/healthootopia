@@ -9,6 +9,7 @@ import { useState, useEffect } from "react";
 import searchJson from "../search.json";
 import { BiSad } from "react-icons/bi";
 import NoPost from "../components/nopost.jsx";
+import Meta from "../components/meta.jsx";
 
 export default function SearchPage() {
   const { query } = useRouter();
@@ -19,9 +20,11 @@ export default function SearchPage() {
 
   return (
     <div className=" flex min-h-screen w-full flex-col ">
-      <Head>
-        <title>Search</title>
-      </Head>
+      <Meta
+        title={"Search"}
+        description="search for articles"
+        ogTitle="Search Healthootopia"
+      />
 
       <Header setMenu={setMenu} menu={menu} />
       <Sidebar padding="pt-14" menu={menu} setMenu={setMenu} />

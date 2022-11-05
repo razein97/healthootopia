@@ -1,12 +1,19 @@
-import React, { useState } from 'react';
-import Sidebar from '../components/sidebar.jsx';
-import Footer from '../components/footer.jsx';
-import Header from '../components/header.jsx';
+import React, { useState } from "react";
+import Sidebar from "../components/sidebar.jsx";
+import Footer from "../components/footer.jsx";
+import Header from "../components/header.jsx";
+import Meta from "../components/meta.jsx";
 
 export default function PrivacyPolicy() {
   const [menu, setMenu] = useState(false);
   return (
     <div>
+      <Meta
+        title={"Privacy Policy"}
+        keywords={"privacy policy"}
+        description="Healthootopia Privacy Policy"
+        ogTitle="Healthootopia-Privacy Policy"
+      />
       <Header setMenu={setMenu} menu={menu} />
       <Sidebar padding="pt-14" menu={menu} setMenu={setMenu} />
 
@@ -103,7 +110,7 @@ export default function PrivacyPolicy() {
             login information and your screen display choices. Login cookies
             last for two days, and screen options cookies last for a year. If
             you select “Remember Me”, your login will persist for two weeks. If
-            you log out of your account, the login cookies will be removed.{' '}
+            you log out of your account, the login cookies will be removed.{" "}
             <br />
             If you edit or publish an article, an additional cookie will be
             saved in your browser. This cookie includes no personal data and
@@ -134,7 +141,7 @@ export default function PrivacyPolicy() {
             use of our Service. We may employ third party companies and
             individuals to facilitate our Service (“Service Providers”), to
             provide the Service on our behalf, to perform Service-related
-            services or to assist us in analyzing how Healthootopia is used.{' '}
+            services or to assist us in analyzing how Healthootopia is used.{" "}
             <br />
             These third parties have access to your Personal Data only to
             perform these tasks on our behalf and are obligated not to disclose
@@ -307,7 +314,7 @@ export default function PrivacyPolicy() {
           </h3>
           <p className="text-justify font-OpenSans text-base font-light md:text-lg">
             We may update our Privacy Policy from time to time. We will notify
-            you of any changes by posting the new Privacy Policy on this page.{' '}
+            you of any changes by posting the new Privacy Policy on this page.{" "}
             <br />
             We will let you know via email and/or a prominent notice on our
             Service, prior to the change becoming effective and update the

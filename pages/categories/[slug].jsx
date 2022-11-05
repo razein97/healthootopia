@@ -10,14 +10,18 @@ import React, { useState } from "react";
 import Sidebar from "../../components/sidebar.jsx";
 import Footer from "../../components/footer.jsx";
 import NoPost from "../../components/nopost.jsx";
+import Meta from "../../components/meta.jsx";
 
 export default function Categories({ posts }) {
   const [menu, setMenu] = useState(false);
   return (
     <div className=" flex min-h-screen w-full flex-col ">
-      <Head>
-        <title>Category</title>
-      </Head>
+      <Meta
+        title={"Category"}
+        keywords={"health, fitness, potpourri"}
+        description={"Category of posts"}
+        ogTitle={"Healthootopia Categories"}
+      />
 
       <Header setMenu={setMenu} menu={menu} />
       <Sidebar padding="pt-14" menu={menu} setMenu={setMenu} />
