@@ -11,7 +11,7 @@ export default function Post({ post }) {
             <Link href={`/blog/${post.slug}`}>
               <Image
                 src={post.frontmatter.cover_image}
-                alt=""
+                alt={post.frontmatter.title}
                 layout="fill"
                 objectFit="cover"
                 className=""

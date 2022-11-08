@@ -22,7 +22,7 @@ export default function Home({ posts }) {
         keywords={
           "health,healthy,healthy habits,gut health,health tips,how to be healthy,healthy lifestyle,mental health,global health,healthy diet,samantha hacks,global health ipo,healthy eating,healthy routine,healthy recipes,10 healthy habits,samantha issues,mental awareness,how more healthy,wealth,skin band,samantha condition,health foods,health goals,0.01% health,public sector, fitness,fitness video,popsugar music 2022,fitness motivation,female fitness motivation 2022,la fitness,eva tips,fitness fails,planet friday,cycling over 50s,fitness blender,trakbar channel,fitness routine,apple fitness+,fitness mistakes,apple app,finesse,fitness challenge,apple plus,my journey,fitness tips for men,fitness influencers,fitness,healthy lifestyle,lifestyle,health,health and wellness lifestyle,how start a lifestyle,fitness lifestyle,health fitness,healthy food,fitness lifestyle,the lifestyle motivation,healthy tips,health channel,the 2020,health in english,healthy english lesson,health travel,health,fitness,health fitness,health care,health journey,healthy journal,fitness tips,6 week challenge,healthy,fitness youtuber,how bullet journal fitness,how your habits,fitness motivation,how become self disciplined wellness,fitness results,home"
         }
-        description="Health, Fitness, Lifestyle"
+        description="Health, Fitness, Lifestyle. A rendezvous for all that's good for you."
         ogTitle="Healthootopia - Learn . Nurture . Love"
         ogUrl="https://healthootopia.com"
       />

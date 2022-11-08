@@ -35,7 +35,7 @@ export default function SlideScreen({ posts }) {
           <Image
             className="brightness-75 filter"
             src={post.frontmatter.banner_image}
-            alt=""
+            alt={post.frontmatter.title}
             objectFit="cover"
             layout="fill"
           />

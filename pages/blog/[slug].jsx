@@ -53,7 +53,7 @@ export default function PostPage({
           <div className="relative  h-60 w-full justify-self-center md:h-[540px] md:w-full">
             <Image
               src={frontmatter.banner_image}
-              alt=""
+              alt={frontmatter.title}
               layout="fill"
               objectFit="cover"
               className=""
