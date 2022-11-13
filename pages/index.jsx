@@ -15,6 +15,7 @@ import Meta from "../components/meta.jsx";
 
 export default function Home({ posts }) {
   const [menu, setMenu] = useState(false);
+
   return (
     <div className="flex min-h-screen w-full flex-col">
       <Meta
@@ -25,6 +26,7 @@ export default function Home({ posts }) {
         description="Health, Fitness, Lifestyle. A rendezvous for all that's good for you."
         ogTitle="Healthootopia - Learn . Nurture . Love"
         ogUrl="https://healthootopia.com"
+        canonicalURL="https://healthootopia.com"
       />
 
       <Header setMenu={setMenu} menu={menu} />

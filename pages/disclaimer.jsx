@@ -3,9 +3,15 @@ import Sidebar from "../components/sidebar.jsx";
 import Footer from "../components/footer.jsx";
 import Header from "../components/header.jsx";
 import Meta from "../components/meta.jsx";
+import { useRouter } from "next/router.js";
 
 export default function Disclaimer() {
   const [menu, setMenu] = useState(false);
+  const router = useRouter();
+  const canonicalUrl = (
+    `https://healthootopia.com` + (router.asPath === "/" ? "" : router.asPath)
+  ).split("?")[0];
+
   return (
     <div className="flex  min-h-screen w-full flex-col">
       <Meta
@@ -13,6 +19,7 @@ export default function Disclaimer() {
         keywords={"diclaimer, notice"}
         description="Disclaimer of the website"
         ogTitle="Disclaimer"
+        canonicalURL={canonicalUrl}
       />
 
       <Header setMenu={setMenu} menu={menu} />

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useRouter } from "next/router.js";
 import Sidebar from "../components/sidebar.jsx";
 import Footer from "../components/footer.jsx";
 import Header from "../components/header.jsx";
@@ -6,6 +7,10 @@ import Meta from "../components/meta.jsx";
 
 export default function Terms() {
   const [menu, setMenu] = useState(false);
+  const router = useRouter();
+  const canonicalUrl = (
+    `https://healthootopia.com` + (router.asPath === "/" ? "" : router.asPath)
+  ).split("?")[0];
   return (
     <div>
       <Meta
@@ -13,6 +18,7 @@ export default function Terms() {
         keywords={"terms, conditions"}
         description="Healthootpia terms and conditions"
         ogTitle="Healthootopia Terms and Conditions"
+        canonicalURL={canonicalUrl}
       />
       <Header setMenu={setMenu} menu={menu} />
       <Sidebar padding="pt-14" menu={menu} setMenu={setMenu} />

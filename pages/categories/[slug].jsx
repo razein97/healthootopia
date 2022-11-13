@@ -11,9 +11,14 @@ import Sidebar from "../../components/sidebar.jsx";
 import Footer from "../../components/footer.jsx";
 import NoPost from "../../components/nopost.jsx";
 import Meta from "../../components/meta.jsx";
+import { useRouter } from "next/router.js";
 
 export default function Categories({ posts }) {
   const [menu, setMenu] = useState(false);
+  const router = useRouter();
+  const canonicalUrl = (
+    `https://healthootopia.com` + (router.asPath === "/" ? "" : router.asPath)
+  ).split("?")[0];
   return (
     <div className=" flex min-h-screen w-full flex-col ">
       <Meta
@@ -21,6 +26,7 @@ export default function Categories({ posts }) {
         keywords={"health, fitness, potpourri"}
         description={"Category of posts"}
         ogTitle={"Healthootopia Categories"}
+        canonicalURL={canonicalUrl}
       />
 
       <Header setMenu={setMenu} menu={menu} />

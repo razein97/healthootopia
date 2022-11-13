@@ -18,12 +18,18 @@ export default function SearchPage() {
 
   const posts = searchPosts(query.q?.toLowerCase());
 
+  const router = useRouter();
+  const canonicalUrl = (
+    `https://healthootopia.com` + (router.asPath === "/" ? "" : router.asPath)
+  ).split("?")[0];
+
   return (
     <div className=" flex min-h-screen w-full flex-col ">
       <Meta
         title={"Search"}
         description="search for articles"
         ogTitle="Search Healthootopia"
+        canonicalURL={canonicalUrl}
       />
 
       <Header setMenu={setMenu} menu={menu} />

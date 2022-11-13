@@ -3,9 +3,14 @@ import Sidebar from "../components/sidebar.jsx";
 import Footer from "../components/footer.jsx";
 import Header from "../components/header.jsx";
 import Meta from "../components/meta.jsx";
+import { useRouter } from "next/router.js";
 
 export default function PrivacyPolicy() {
   const [menu, setMenu] = useState(false);
+  const router = useRouter();
+  const canonicalUrl = (
+    `https://healthootopia.com` + (router.asPath === "/" ? "" : router.asPath)
+  ).split("?")[0];
   return (
     <div>
       <Meta
@@ -13,6 +18,7 @@ export default function PrivacyPolicy() {
         keywords={"privacy policy"}
         description="Healthootopia Privacy Policy"
         ogTitle="Healthootopia-Privacy Policy"
+        canonicalURL={canonicalUrl}
       />
       <Header setMenu={setMenu} menu={menu} />
       <Sidebar padding="pt-14" menu={menu} setMenu={setMenu} />

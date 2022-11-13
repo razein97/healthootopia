@@ -10,6 +10,7 @@ const Meta = ({
   ogType,
   ogUrl,
   ogImage,
+  canonicalURL,
 }) => {
   return (
     <Head>
@@ -22,7 +23,7 @@ const Meta = ({
       <meta property="og:image" content={ogImage} />
       <meta charSet="utf-8"></meta>
       <link rel="icon" href="/favicon.ico" />
-      <link rel="canonical" href={canonicalURL()} />
+      <link rel="canonical" href={canonicalURL} />
       <title>{title}</title>
     </Head>
   );
@@ -32,13 +33,6 @@ Meta.defaultProps = {
   keywords: "health, fitness, cancer, articles, knowledge",
   description: "latest health articles",
   ogTitle: "Healthootopia",
+  canonicalURL: "https://healthootopia.com",
 };
 export default Meta;
-
-function canonicalURL() {
-  const router = useRouter();
-  const site = "https://healthootopia.com";
-  const canonicalURL = (site + router.asPath).split("?")[0];
-
-  return canonicalURL;
-}

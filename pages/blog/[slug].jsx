@@ -23,6 +23,7 @@ import getRandomPost from "../../utils/getRandomPosts";
 import RecommendedPost from "../../components/recommendedPost";
 import Tags from "../../components/tags";
 import Meta from "../../components/meta";
+import { useRouter } from "next/router.js";
 
 export default function PostPage({
   frontmatter,
@@ -33,6 +34,10 @@ export default function PostPage({
 }) {
   const [menu, setMenu] = useState(false);
   const [copied, setCopied] = useState("Copy link to clipboard");
+  const router = useRouter();
+  const canonicalUrl = (
+    `https://healthootopia.com` + (router.asPath === "/" ? "" : router.asPath)
+  ).split("?")[0];
 
   return (
     <div className="flex min-h-screen w-full flex-col">
@@ -42,6 +47,7 @@ export default function PostPage({
         description={frontmatter.excerpt}
         ogTitle={frontmatter.title}
         ogUrl={`https://healthootopia.com/blog/${slug}`}
+        canonicalURL={canonicalUrl}
       />
 
       <Header setMenu={setMenu} menu={menu} />

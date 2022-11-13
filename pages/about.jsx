@@ -7,6 +7,8 @@ import Image from "next/image";
 import myImg from "../public/images/smrita-singh.png";
 import Footer from "../components/footer";
 import Link from "next/link";
+import { useRouter } from "next/router.js";
+
 import {
   AiFillFacebook,
   AiFillInstagram,
@@ -17,6 +19,10 @@ import Meta from "../components/meta";
 
 export default function AboutMe() {
   const [menu, setMenu] = useState(false);
+  const router = useRouter();
+  const canonicalUrl = (
+    `https://healthootopia.com` + (router.asPath === "/" ? "" : router.asPath)
+  ).split("?")[0];
   return (
     <div className="flex h-screen flex-col justify-between">
       <Meta
@@ -24,6 +30,7 @@ export default function AboutMe() {
         keywords={"about, author, doctor, practitioner, health"}
         description="About the author"
         ogTitle="About the author"
+        canonicalURL={canonicalUrl}
       />
       <Header setMenu={setMenu} menu={menu} />
       <Sidebar padding="pt-14" menu={menu} setMenu={setMenu} />
