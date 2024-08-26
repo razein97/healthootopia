@@ -11,7 +11,7 @@
 	export let data: LayoutData;
 </script>
 
-<ModeWatcher defaultMode="light" />
+<ModeWatcher />
 
 <main class="!scroll-smooth" data-sveltekit-preload-data="false">
 	<!-- <DrawerMenu {showUserMenu} /> -->
