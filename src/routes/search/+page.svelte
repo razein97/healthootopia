@@ -21,7 +21,7 @@
 	let count = 0;
 	onMount(() => {
 		loading = true;
-		myParameter = $page.url.searchParams.get('q');
+		myParameter = $page.url.searchParams.get('q').toLowerCase();
 		filteredPosts = search(myParameter) ?? [];
 		addMore(count);
 		loading = false;
