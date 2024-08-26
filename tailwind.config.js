@@ -1,5 +1,4 @@
-/* eslint-disable @typescript-eslint/no-require-imports */
-// import { fontFamily } from "tailwindcss/defaultTheme";
+import { fontFamily } from "tailwindcss/defaultTheme";
 
 
 /** @type {import('tailwindcss').Config} */
@@ -61,8 +60,8 @@ const config = {
 				sm: "calc(var(--radius) - 4px)"
 			},
 			fontFamily: {
-				sans: ['Open Sans', 'sans-serif'],
-				serif: ['Playfair Display', 'serif'],
+				sans: ['Open Sans', ...fontFamily.sans],
+				serif: ['Playfair Display', ...fontFamily.serif],
 				"cursive": ['Sofia', 'cursive']
 
 

@@ -46,6 +46,9 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@fontsource-variable/open-sans": "^5.0.30",
+		"@fontsource-variable/playfair-display": "^5.0.26",
+		"@fontsource/sofia": "^5.0.13",
 		"bits-ui": "^0.21.13",
 		"clsx": "^2.1.1",
 		"embla-carousel-autoplay": "^8.2.0",

@@ -2,27 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-	font-family: 'Sofia';
-	font-style: 'normal';
-	font-weight: 400;
-	src: url('../fonts/Sofia-Regular.woff2') format('woff2');
-}
-
-@font-face {
-	font-family: 'Playfair Display';
-	font-weight: 400 900;
-	font-style: 'normal';
-	src: url('../fonts/PlayfairDisplay-VariableFont_wght.woff2') format('woff2');
-}
-
-@font-face {
-	font-family: 'Open Sans';
-	font-weight: 300 800;
-	font-style: 'normal';
-	src: url('../fonts/OpenSans-VariableFont.woff2'), format('woff2');
-}
-
 @layer base {
 	:root {
 		--background: 0 0% 100%;
