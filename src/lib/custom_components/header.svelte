@@ -11,6 +11,7 @@
 	import IcOutlineSearch from '~icons/ic/outline-search';
 	import IcRoundClose from '~icons/ic/round-close';
 	import IcRoundMenu from '~icons/ic/round-menu';
+	import IcBaselineRssFeed from '~icons/ic/baseline-rss-feed';
 	// export let data;
 
 	let search_bar = false;

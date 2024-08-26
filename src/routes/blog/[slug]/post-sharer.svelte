@@ -2,8 +2,10 @@
 	import RiTwitterXFill from '~icons/ri/twitter-x-fill';
 	import FaFacebookOfficial from '~icons/fa/facebook-official';
 	import FaLink from '~icons/fa/link';
+	import IcBaselineRssFeed from '~icons/ic/baseline-rss-feed';
 	import { Button } from '$lib/components/ui/button';
 	import * as Tooltip from '$lib/components/ui/tooltip/index.js';
+	import { goto } from '$app/navigation';
 
 	export let slug, title, href: String;
 	$: copyLink = 'Copy link to clipboard';
@@ -61,4 +63,19 @@
 			</Tooltip.Content>
 		</Tooltip.Root>
 	</div>
+
+	<Tooltip.Root openDelay={50}>
+		<Tooltip.Trigger asChild let:builder>
+			<Button
+				builders={[builder]}
+				variant="ghost"
+				on:click={() => {
+					goto('/rss.xml');
+				}}><IcBaselineRssFeed /></Button
+			>
+		</Tooltip.Trigger>
+		<Tooltip.Content>
+			<p>Rss</p>
+		</Tooltip.Content>
+	</Tooltip.Root>
 </div>

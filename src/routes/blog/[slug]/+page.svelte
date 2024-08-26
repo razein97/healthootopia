@@ -73,7 +73,9 @@
 		<br />
 		<hr />
 
-		<div class="flex flex-col md:flex-row md:justify-evenly md:space-x-4">
+		<div
+			class="mx-auto flex w-full flex-col items-center md:flex-row md:justify-evenly md:space-x-4 xl:w-[1080px] 2xl:w-[1080px]"
+		>
 			{#each rand_posts as rand_post}
 				<Recommendation post={rand_post} />
 				<hr class="md:hidden" />
